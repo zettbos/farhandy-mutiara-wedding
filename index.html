@@ -3564,7 +3564,9 @@
 
       // Custom Background Video Cover Override
       const coverVideo = document.getElementById('dyn-cover-video');
-      if (coverVideo) {
+      const shouldInitVideo = IS_GAS || !SCRIPT_URL || window.configApiFetched;
+
+      if (coverVideo && shouldInitVideo) {
         const videoUrl = convertDriveUrl(cfg.video_background_cover, false);
         const defaultVideo = 'https://invitingart.id/wp-content/uploads/2026/05/Artboard-rev-java-royal.mp4';
         const targetVideo = (videoUrl && videoUrl.trim() !== '') ? videoUrl : defaultVideo;
@@ -3603,6 +3605,9 @@
           videoReady = true;
           checkPreloaderHiding();
         }, 2500);
+      } else if (coverVideo && !shouldInitVideo) {
+        // Hold videoReady flag until the config fetch API returns
+        videoReady = false;
       }
 
       // Helper function to extract first name word
