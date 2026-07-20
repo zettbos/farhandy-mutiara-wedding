@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Undangan Pernikahan - Keris & Kenia</title>
+  <title>Undangan Pernikahan - Farhandy & Mutiara</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -443,7 +443,6 @@
       color: rgba(212, 175, 55, 0.6);
       letter-spacing: 0.15em;
       margin-top: 8px;
-      text-transform: uppercase;
       font-weight: 500;
       animation: preloaderPulse 2s ease-in-out infinite;
       animation-delay: 0.5s;
@@ -2791,7 +2790,7 @@
     </svg>
 
     <p class="cover-label">Undangan Pernikahan</p>
-    <h1 class="cover-title gold-foil" id="dyn-cover-names">Keris & Kenia</h1>
+    <h1 class="cover-title gold-foil" id="dyn-cover-names">Farhandy & Mutiara</h1>
     <p class="cover-hashtag">#MUTIpleReasonToBeFARever</p>
 
     <div class="cover-recipient-wrap">
@@ -2875,7 +2874,7 @@
           <div class="photo-frame" onclick="openLightbox(this)" style="cursor: pointer;">
             <img class="photo-img" id="dyn-groom-img" src="" alt="Mempelai Pria" referrerpolicy="no-referrer">
           </div>
-          <h3 class="couple-name gold-foil" id="dyn-groom-name">Keris Handli</h3>
+          <h3 class="couple-name gold-foil" id="dyn-groom-name">Farhandy</h3>
           <p class="couple-parents" id="dyn-groom-parents">Putra kedua dari Bpk. Sugeng Handoyo &amp; Ibu Kania Rahayu
           </p>
           <a href="#" target="_blank" class="btn-instagram" id="dyn-groom-ig" style="display: none;">
@@ -2889,7 +2888,7 @@
           <div class="photo-frame" onclick="openLightbox(this)" style="cursor: pointer;">
             <img class="photo-img" id="dyn-bride-img" src="" alt="Mempelai Wanita" referrerpolicy="no-referrer">
           </div>
-          <h3 class="couple-name gold-foil" id="dyn-bride-name">Kenia Raras</h3>
+          <h3 class="couple-name gold-foil" id="dyn-bride-name">Mutiara</h3>
           <p class="couple-parents" id="dyn-bride-parents">Putri pertama dari Bpk. Kusumo Hadi &amp; Ibu Ratih Ambarwati
           </p>
           <a href="#" target="_blank" class="btn-instagram" id="dyn-bride-ig" style="display: none;">
@@ -3248,7 +3247,7 @@
                 </div>
                 <div class="bank-body">
                   <p class="account-number" id="dyn-bank-norek-1">1370012345678</p>
-                  <p class="account-holder" id="dyn-bank-nama-1">a.n. Keris Handli</p>
+                  <p class="account-holder" id="dyn-bank-nama-1">a.n. Farhandy</p>
                   <button class="btn-copy" onclick="copyToClipboard('dyn-bank-norek-1', this)">
                     <i data-lucide="copy"></i> Salin Rekening
                   </button>
@@ -3262,7 +3261,7 @@
                 </div>
                 <div class="bank-body">
                   <p class="account-number" id="dyn-bank-norek-2">8012345678</p>
-                  <p class="account-holder" id="dyn-bank-nama-2">a.n. Kenia Raras</p>
+                  <p class="account-holder" id="dyn-bank-nama-2">a.n. Mutiara</p>
                   <button class="btn-copy" onclick="copyToClipboard('dyn-bank-norek-2', this)">
                     <i data-lucide="copy"></i> Salin Rekening
                   </button>
@@ -3390,7 +3389,7 @@
     <!-- FOOTER -->
     <footer class="footer">
       <img class="footer-divider" id="dyn-footer-divider" src="" alt="Ornament" referrerpolicy="no-referrer">
-      <p class="footer-names">Keris & Kenia</p>
+      <p class="footer-names">Farhandy & Mutiara</p>
       <p class="footer-hashtag">#MUTIpleReasonToBeFARever</p>
       <div class="footer-line"></div>
       <p class="footer-text">Matur Nuwun — Terima Kasih</p>
@@ -3436,16 +3435,16 @@
     /* ---- MOCK DATA (3 entries, Canvas fallback) ---- */
     const MOCK_WISHES = [
       { id_rsvp: 'RSVP-0003', nama_tamu: 'Budi Santoso & Keluarga', status_kehadiran: 'Hadir', ucapan: 'Selamat menempuh hidup baru! Mugi-mugi dados keluarga ingkang sakinah, mawaddah, warahmah. Kebak berkah lan tentrem selalu.', tanggal_input: '3 Juli 2026 10:15' },
-      { id_rsvp: 'RSVP-0002', nama_tamu: 'Siti Rahma', status_kehadiran: 'Hadir', ucapan: 'Selamat ya Kenia dan Keris! Semoga lancar acaranya dan bahagia selalu seumur hidup. Aamiin.', tanggal_input: '3 Juli 2026 09:30' },
+      { id_rsvp: 'RSVP-0002', nama_tamu: 'Siti Rahma', status_kehadiran: 'Hadir', ucapan: 'Selamat ya Mutiara dan Farhandy! Semoga lancar acaranya dan bahagia selalu seumur hidup. Aamiin.', tanggal_input: '3 Juli 2026 09:30' },
       { id_rsvp: 'RSVP-0001', nama_tamu: 'Joko Prabowo', status_kehadiran: 'Ragu-ragu', ucapan: 'Sugeng mengku gati! Mugi-mugi acara lumampah kanthi lancar lan berkah dalem Gusti tansah menyertai keluarga besar.', tanggal_input: '2 Juli 2026 21:12' }
     ];
 
     /* ---- DEFAULT CONFIG (Javanese Heritage Fallback) ---- */
     const DEFAULT_CONFIG = {
-      nama_mempelai_wanita: "Kenia Raras",
+      nama_mempelai_wanita: "Mutiara",
       ortu_mempelai_wanita: "Putri pertama dari Bpk. Kusumo Hadi & Ibu Ratih Ambarwati",
       foto_mempelai_wanita: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=400",
-      nama_mempelai_pria: "Keris Handli",
+      nama_mempelai_pria: "Farhandy",
       ortu_mempelai_pria: "Putra kedua dari Bpk. Sugeng Handoyo & Ibu Kania Rahayu",
       foto_mempelai_pria: "https://images.unsplash.com/photo-1590055531615-f16d36faa8f1?auto=format&fit=crop&q=80&w=400",
       akad_tanggal: "Kamis, 15 Oktober 2026",
@@ -3812,12 +3811,12 @@
 
       // Set Gift Registry Data
       setElText('dyn-bank-norek-1', cfg.bank_norek_1 || '1370012345678');
-      setElText('dyn-bank-nama-1', cfg.bank_an_1 || 'a.n. Keris Handli');
+      setElText('dyn-bank-nama-1', cfg.bank_an_1 || 'a.n. Farhandy');
       const b1 = document.querySelector('#gift-tab-transfer .bank-card:nth-child(1) .bank-name');
       if (b1) b1.textContent = cfg.bank_nama_1 || 'Bank Mandiri';
 
       setElText('dyn-bank-norek-2', cfg.bank_norek_2 || '8012345678');
-      setElText('dyn-bank-nama-2', cfg.bank_an_2 || 'a.n. Kenia Raras');
+      setElText('dyn-bank-nama-2', cfg.bank_an_2 || 'a.n. Mutiara');
       const b2 = document.querySelector('#gift-tab-transfer .bank-card:nth-child(2) .bank-name');
       if (b2) b2.textContent = cfg.bank_nama_2 || 'Bank BCA';
 
