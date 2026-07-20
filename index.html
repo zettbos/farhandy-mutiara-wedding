@@ -1376,6 +1376,10 @@
         flex-shrink: 0;
         /* Block ampersand from squishing */
       }
+
+      .ia-ls-nav-btn {
+        top: 155px; /* Centered on mobile photo */
+      }
     }
 
     /* Javanese wisdom quote */
@@ -1857,6 +1861,51 @@
       width: 24px;
       border-radius: 4px;
       background: var(--gold);
+    }
+
+    .ia-ls-nav-btn {
+      position: absolute;
+      top: 200px; /* Centered on desktop photo */
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 248, 240, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--maroon-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100;
+      opacity: 0.55;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      padding: 0;
+    }
+
+    .ia-ls-nav-btn:hover {
+      background: var(--maroon-dark);
+      color: var(--gold-pale);
+      border-color: var(--gold-light);
+      transform: translateY(-50%) scale(1.1);
+      opacity: 1;
+    }
+
+    .ia-ls-nav-btn.prev-btn {
+      left: 12px;
+    }
+
+    .ia-ls-nav-btn.next-btn {
+      right: 12px;
+    }
+
+    .ia-ls-nav-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.5px;
     }
 
 
@@ -3124,6 +3173,14 @@
           <div class="ia-ls-dot" data-target="1"></div>
           <div class="ia-ls-dot" data-target="2"></div>
         </div>
+
+        <!-- Navigasi Arrows -->
+        <button type="button" class="ia-ls-nav-btn prev-btn" id="story-prev-btn" aria-label="Previous Slide">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <button type="button" class="ia-ls-nav-btn next-btn" id="story-next-btn" aria-label="Next Slide">
+          <i data-lucide="chevron-right"></i>
+        </button>
       </div>
 
       <!-- Story Quote Card -->
@@ -3938,6 +3995,24 @@
           startAutoPlay();
         });
       });
+
+      const prevBtn = slider.querySelector('#story-prev-btn');
+      const nextBtn = slider.querySelector('#story-next-btn');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          goToSlide(currentIndex - 1);
+          stopAutoPlay();
+          startAutoPlay();
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          goToSlide(currentIndex + 1);
+          stopAutoPlay();
+          startAutoPlay();
+        });
+      }
 
       // Swipe support
       let startX = 0;
