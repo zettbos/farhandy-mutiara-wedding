@@ -1378,7 +1378,21 @@
       }
 
       .ia-ls-nav-btn {
-        top: 155px; /* Centered on mobile photo */
+        top: calc((100vw - 48px) * 0.375); /* Dynamically centered on mobile photo (viewport width - paddings * 0.75 * 0.5) */
+      }
+
+      .ia-ls-text {
+        font-size: 11.5px;
+        line-height: 1.5;
+      }
+
+      .ia-ls-title {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+
+      .ia-ls-content {
+        padding: 10px 4px 0;
       }
     }
 
@@ -1865,7 +1879,7 @@
 
     .ia-ls-nav-btn {
       position: absolute;
-      top: 200px; /* Centered on desktop photo */
+      top: 187px; /* Centered on desktop photo (500px width * 3/4 * 1/2) */
       transform: translateY(-50%);
       width: 36px;
       height: 36px;
