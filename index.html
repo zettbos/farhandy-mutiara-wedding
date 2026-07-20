@@ -3958,19 +3958,33 @@
           }
         }
 
+        let isGalleryVisible = false;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            isGalleryVisible = entry.isIntersecting;
+            if (isGalleryVisible) {
+              clearInterval(galleryAutoSlideInterval);
+              galleryAutoSlideInterval = setInterval(nextSlide, intervalTime);
+            } else {
+              clearInterval(galleryAutoSlideInterval);
+            }
+          });
+        }, { threshold: 0.1 });
+        observer.observe(mainDisplay);
+
         thumbnails.forEach((thumb, index) => {
           thumb.addEventListener("click", function () {
             updateGallery(index);
-            clearInterval(galleryAutoSlideInterval);
-            galleryAutoSlideInterval = setInterval(nextSlide, intervalTime);
+            if (isGalleryVisible) {
+              clearInterval(galleryAutoSlideInterval);
+              galleryAutoSlideInterval = setInterval(nextSlide, intervalTime);
+            }
           });
         });
 
         // Initialize display to first thumbnail
         setTimeout(() => {
           updateGallery(0);
-          clearInterval(galleryAutoSlideInterval);
-          galleryAutoSlideInterval = setInterval(nextSlide, intervalTime);
         }, 1000);
       }
 
@@ -4044,7 +4058,17 @@
       }, { passive: true });
 
       goToSlide(0);
-      startAutoPlay();
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startAutoPlay();
+          } else {
+            stopAutoPlay();
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(slider);
     }
 
     /* ---- STATE & CONTROLS ---- */
