@@ -3857,8 +3857,10 @@
       initLoveStorySlider();
 
       // Mark config loaded for preloader
-      configLoaded = true;
-      checkPreloaderHiding();
+      if (IS_GAS || !SCRIPT_URL || window.configApiFetched) {
+        configLoaded = true;
+        checkPreloaderHiding();
+      }
     }
 
     function setElText(id, val) {
@@ -4056,6 +4058,35 @@
       startCountdown(window.appConfig.tanggal_countdown);
 
       loadWishes(1, true);
+
+      // Jika di Vercel/Lokal dan memiliki SCRIPT_URL, tarik konfigurasi secara dinamis dari Google Sheets
+      if (!IS_GAS && SCRIPT_URL) {
+        fetch(`${SCRIPT_URL}?action=getConfig`)
+          .then(response => {
+            if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+            return response.json();
+          })
+          .then(cfg => {
+            if (cfg && typeof cfg === 'object' && Object.keys(cfg).length > 0) {
+              // Simpan data konfigurasi baru
+              window.appConfig = Object.assign({}, DEFAULT_CONFIG, cfg);
+              window.configApiFetched = true;
+              
+              // Render ulang dengan konfigurasi dari Google Sheet
+              renderDynamicContent();
+              
+              // Mulai ulang countdown dengan tanggal baru dari Google Sheet
+              startCountdown(window.appConfig.tanggal_countdown);
+            }
+          })
+          .catch(err => {
+            console.error("Gagal mengambil data konfigurasi dari Google Sheets:", err);
+            // Tetap loloskan preloader agar halaman tidak stuck loading
+            window.configApiFetched = true;
+            configLoaded = true;
+            checkPreloaderHiding();
+          });
+      }
     });
 
     /* ---- GUEST NAME ---- */
