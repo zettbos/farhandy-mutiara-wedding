@@ -22,8 +22,8 @@
       --warm-brown: #3E2723;
       --maroon-jawa: #58111a;
       /* Royal Javanese Maroon */
-      --green-jawa: #1b4332;
-      --green-jawa-light: #2d6a4f;
+      --maroon-dark: #3a0a10; /* Deep Javanese Maroon-Brown */
+      --maroon-dark-light: #58111a; /* Javanese Maroon */
       --mid-brown: #5D4037;
       --light-brown: #8D6E63;
       --gold: #D4AF37;
@@ -619,8 +619,10 @@
     .cover-title {
       position: relative;
       z-index: 2;
-      font-family: var(--ff-script);
+      font-family: var(--ff-display);
       font-size: clamp(42px, 10vw, 72px);
+      font-style: italic;
+      font-weight: 500;
       color: var(--gold-light);
       text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
       margin-bottom: 40px;
@@ -724,8 +726,8 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--green-jawa);
-      /* Solid Green Jawa background */
+      background: var(--maroon-dark);
+      /* Solid Dark Maroon background */
       color: var(--gold-pale);
       border: 1px solid var(--gold);
       font-family: var(--ff-body);
@@ -1271,7 +1273,6 @@
     }
 
     /* Mempelai Side-by-Side Mobile Responsive Overrides */
-    /* Mempelai Side-by-Side Mobile Responsive Overrides */
     @media (max-width: 599px) {
       #mempelai {
         padding-top: 25px !important;
@@ -1362,10 +1363,11 @@
       max-width: 680px;
       position: relative;
       padding: 36px 28px;
-      background: var(--maroon-jawa);
-      border: 1px solid var(--gold);
+      background: radial-gradient(circle at center, #6f1622 0%, #3a0a10 100%);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 16px;
       text-align: center;
-      box-shadow: 0 6px 20px rgba(88, 17, 26, 0.15);
+      box-shadow: 0 12px 35px rgba(58, 10, 16, 0.3);
     }
 
     .wisdom-quote {
@@ -1411,18 +1413,19 @@
 
     .event-card {
       position: relative;
-      background: var(--maroon-jawa);
-      border: 1px solid var(--gold);
+      background: radial-gradient(circle at center, #6f1622 0%, #3a0a10 100%);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 16px;
       padding: 36px 24px;
       text-align: center;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(88, 17, 26, 0.15);
+      box-shadow: 0 12px 40px rgba(58, 10, 16, 0.3);
       transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
     }
 
     .event-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(88, 17, 26, 0.3);
+      box-shadow: 0 16px 50px rgba(58, 10, 16, 0.45);
     }
 
     /* Subtle batik watermark in card */
@@ -1552,8 +1555,8 @@
     .cd-box {
       width: clamp(60px, 16vw, 80px);
       height: clamp(68px, 18vw, 88px);
-      background: var(--green-jawa);
-      /* Beautiful Javanese Green */
+      background: var(--maroon-dark);
+      /* Beautiful Javanese Maroon */
       border: 1px solid rgba(212, 175, 55, 0.3);
       border-radius: 8px;
       /* Elegant rounded corners */
@@ -1566,7 +1569,7 @@
     }
 
     .cd-num {
-      font-family: var(--ff-display);
+      font-family: var(--ff-body);
       font-size: clamp(28px, 8vw, 38px);
       font-weight: 600;
       color: var(--gold-light);
@@ -1614,12 +1617,19 @@
 
     .invart-thumb-track {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       overflow-x: auto;
-      padding: 4px 2px 10px 2px;
+      padding: 8px 2px 12px 2px;
       scrollbar-width: thin;
       scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
       -webkit-overflow-scrolling: touch;
+    }
+
+    /* Center thumbnails symmetrically when they fit the container */
+    @media (min-width: 520px) {
+      .invart-thumb-track {
+        justify-content: center;
+      }
     }
 
     .invart-thumb-track::-webkit-scrollbar {
@@ -1632,9 +1642,9 @@
     }
 
     .invart-thumb-item {
-      flex: 0 0 75px;
+      flex: 0 0 clamp(62px, 14vw, 78px);
       aspect-ratio: 1;
-      border-radius: 4px;
+      border-radius: 8px;
       overflow: hidden;
       border: 2px solid transparent;
       cursor: pointer;
@@ -1653,7 +1663,7 @@
       opacity: 1;
       border-color: var(--gold);
       transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
     }
 
     /* Lightbox */
@@ -1964,10 +1974,10 @@
     }
 
     .gift-tab-btn.active {
-      background-color: var(--green-jawa);
+      background-color: var(--maroon-dark);
       color: var(--gold-pale);
       border-color: var(--gold);
-      box-shadow: 0 4px 12px rgba(27, 67, 50, 0.25);
+      box-shadow: 0 4px 12px rgba(58, 10, 16, 0.25);
     }
 
     .gift-tab-content {
@@ -2020,7 +2030,7 @@
     }
 
     .bank-name {
-      font-family: var(--ff-display);
+      font-family: var(--ff-body);
       color: #3e2723;
       font-weight: 700;
       font-size: 14px;
@@ -2037,7 +2047,7 @@
     }
 
     .account-number {
-      font-family: var(--ff-display);
+      font-family: var(--ff-body);
       font-size: 17px;
       color: var(--maroon-jawa);
       /* Deep Maroon Jawa for high contrast */
@@ -2062,23 +2072,23 @@
       font-size: 12px;
       font-weight: 600;
       color: var(--gold-pale);
-      background: var(--green-jawa);
+      background: var(--maroon-dark);
       border: 1px solid var(--gold);
       border-radius: 6px;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 4px 10px rgba(27, 67, 50, 0.25);
+      box-shadow: 0 4px 10px rgba(58, 10, 16, 0.25);
       transition: all 0.2s ease;
     }
 
     .btn-copy:hover {
       transform: translateY(-1px);
-      background: var(--green-jawa-light);
+      background: var(--maroon-dark-light);
       color: var(--gold-pale);
-      border-color: var(--green-jawa-light);
-      box-shadow: 0 6px 15px rgba(45, 106, 79, 0.3);
+      border-color: var(--maroon-dark-light);
+      box-shadow: 0 6px 15px rgba(88, 17, 26, 0.3);
     }
 
     .btn-copy i {
@@ -2308,7 +2318,7 @@
     .btn-submit {
       width: 100%;
       padding: 16px 24px;
-      background: var(--green-jawa);
+      background: var(--maroon-dark);
       color: var(--gold-pale);
       border: 1px solid rgba(212, 175, 55, 0.3);
       font-family: var(--ff-body);
@@ -2340,8 +2350,8 @@
     }
 
     .btn-submit:hover {
-      background: var(--green-jawa-light);
-      box-shadow: 0 4px 20px rgba(27, 67, 50, 0.4);
+      background: var(--maroon-dark-light);
+      box-shadow: 0 4px 20px rgba(88, 17, 26, 0.4);
     }
 
     .btn-submit:disabled {
@@ -2657,8 +2667,10 @@
     }
 
     .footer-names {
-      font-family: var(--ff-script);
+      font-family: var(--ff-display);
       font-size: clamp(32px, 8vw, 42px);
+      font-style: italic;
+      font-weight: 500;
       color: var(--gold);
       margin-bottom: 8px;
       text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
@@ -2954,7 +2966,7 @@
           <div class="card-corner corner-tr"></div>
           <div class="card-corner corner-bl"></div>
           <div class="card-corner corner-br"></div>
-          <i data-lucide="book-open" class="event-icon"></i>
+          <i data-lucide="heart" class="event-icon"></i>
           <h3 class="event-name gold-foil">Akad Nikah</h3>
           <p class="event-date" id="dyn-akad-tanggal">Kamis, 15 Oktober 2026</p>
           <p class="event-time" id="dyn-akad-waktu">09.00 — 11.00 WIB</p>
@@ -2968,7 +2980,7 @@
           <div class="card-corner corner-tr"></div>
           <div class="card-corner corner-bl"></div>
           <div class="card-corner corner-br"></div>
-          <i data-lucide="party-popper" class="event-icon"></i>
+          <i data-lucide="crown" class="event-icon"></i>
           <h3 class="event-name gold-foil">Resepsi</h3>
           <p class="event-date" id="dyn-resepsi-tanggal">Kamis, 15 Oktober 2026</p>
           <p class="event-time" id="dyn-resepsi-waktu">12.00 — 15.00 WIB</p>
@@ -3223,7 +3235,7 @@
         <div class="gift-tab-headers">
           <button class="gift-tab-btn active" onclick="switchGiftTab('transfer')"><i data-lucide="credit-card"></i>
             Transfer Bank</button>
-          <button class="gift-tab-btn" onclick="switchGiftTab('kado')"><i data-lucide="package"></i> Kirim Kado</button>
+          <button class="gift-tab-btn" onclick="switchGiftTab('kado')"><i data-lucide="gift"></i> Kirim Kado</button>
         </div>
 
         <!-- TAB CONTENT: TRANSFER BANK -->
@@ -3368,7 +3380,7 @@
           </div>
 
           <button type="submit" class="btn-submit" id="btn-submit">
-            <i data-lucide="send"></i> Kirim Konfirmasi
+            <i data-lucide="mail"></i> Kirim Konfirmasi
           </button>
         </form>
       </div>
@@ -4210,9 +4222,9 @@
     function copyTextDirect(text, btn) {
       navigator.clipboard.writeText(text).then(() => {
         const originalText = btn.innerHTML;
-        btn.innerHTML = '<i data-lucide="check" style="width:12px;height:12px;color:#10b981;"></i> Berhasil Disalin';
-        btn.style.borderColor = '#10b981';
-        btn.style.color = '#10b981';
+        btn.innerHTML = '<i data-lucide="check" style="width:12px;height:12px;color:var(--gold-light);"></i> Berhasil Disalin';
+        btn.style.borderColor = 'var(--gold-light)';
+        btn.style.color = 'var(--gold-light)';
         lucide.createIcons();
         setTimeout(() => {
           btn.innerHTML = originalText;
@@ -4412,7 +4424,7 @@
     function resetBtn() {
       const btn = document.getElementById('btn-submit');
       btn.disabled = false;
-      btn.innerHTML = '<i data-lucide="send"></i> Kirim Konfirmasi';
+      btn.innerHTML = '<i data-lucide="mail"></i> Kirim Konfirmasi';
       lucide.createIcons();
     }
 
