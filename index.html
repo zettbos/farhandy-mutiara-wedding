@@ -4223,7 +4223,6 @@
       });
     }
 
-    /* ---- COUNTDOWN ---- */
     function startCountdown(targetStr) {
       const target = new Date(targetStr).getTime();
       const tick = () => {
@@ -4239,7 +4238,10 @@
         document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
       };
       tick();
-      setInterval(tick, 1000);
+      if (window.countdownInterval) {
+        clearInterval(window.countdownInterval);
+      }
+      window.countdownInterval = setInterval(tick, 1000);
     }
 
     /* ---- LIGHTBOX ---- */
