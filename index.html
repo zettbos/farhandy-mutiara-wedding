@@ -2295,7 +2295,7 @@
     }
 
     .guests-group.show {
-      max-height: 120px;
+      max-height: 400px;
       opacity: 1;
       margin-bottom: 24px;
     }
@@ -3096,6 +3096,18 @@
           <div class="invart-thumb-item">
             <img id="dyn-gallery-img-6" src="" alt="Foto Galeri 6" referrerpolicy="no-referrer">
           </div>
+          <div class="invart-thumb-item">
+            <img id="dyn-gallery-img-7" src="" alt="Foto Galeri 7" referrerpolicy="no-referrer">
+          </div>
+          <div class="invart-thumb-item">
+            <img id="dyn-gallery-img-8" src="" alt="Foto Galeri 8" referrerpolicy="no-referrer">
+          </div>
+          <div class="invart-thumb-item">
+            <img id="dyn-gallery-img-9" src="" alt="Foto Galeri 9" referrerpolicy="no-referrer">
+          </div>
+          <div class="invart-thumb-item">
+            <img id="dyn-gallery-img-10" src="" alt="Foto Galeri 10" referrerpolicy="no-referrer">
+          </div>
         </div>
       </div>
 
@@ -3366,7 +3378,7 @@
           </div>
 
           <div class="guests-group" id="guests-group">
-            <div class="form-group" style="margin-bottom:0">
+            <div class="form-group" style="margin-bottom:16px">
               <label class="form-label">Jumlah Tamu</label>
               <select class="form-control" id="inp-guests">
                 <option value="1">1 Orang</option>
@@ -3375,6 +3387,36 @@
                 <option value="4">4 Orang</option>
                 <option value="5">5 Orang</option>
               </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:16px">
+              <label class="form-label">Email Anda (Untuk Pengingat Acara)</label>
+              <input class="form-control" type="email" id="inp-email" placeholder="contoh: nama@email.com">
+            </div>
+
+            <div class="form-group" style="margin-bottom:0">
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 13px; color: var(--gold-pale); font-weight: 500;">
+                <input type="checkbox" id="inp-want-reminder" onchange="toggleReminderOptions(this.checked)" style="accent-color: var(--gold); width: 18px; height: 18px; cursor: pointer;">
+                <span>Ingatkan saya via Email sebelum hari H</span>
+              </label>
+
+              <div id="reminder-options-wrap" style="display: none; margin-top: 12px; padding: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;">
+                <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 8px;">Pilih jadwal pengingat (bisa pilih lebih dari satu):</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gold-pale); cursor: pointer;">
+                    <input type="checkbox" name="reminder_timing" value="H-7" checked style="accent-color: var(--gold); width: 15px; height: 15px;">
+                    <span>H-7 (1 Minggu)</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gold-pale); cursor: pointer;">
+                    <input type="checkbox" name="reminder_timing" value="H-3" checked style="accent-color: var(--gold); width: 15px; height: 15px;">
+                    <span>H-3 (3 Hari)</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gold-pale); cursor: pointer;">
+                    <input type="checkbox" name="reminder_timing" value="H-1" checked style="accent-color: var(--gold); width: 15px; height: 15px;">
+                    <span>H-1 (1 Hari)</span>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -3497,6 +3539,10 @@
       foto_galeri_4: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600",
       foto_galeri_5: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&q=80&w=600",
       foto_galeri_6: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600",
+      foto_galeri_7: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600",
+      foto_galeri_8: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=600",
+      foto_galeri_9: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600",
+      foto_galeri_10: "https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&q=80&w=600",
       ornamen_gunungan_cover: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
       ornamen_header_seksi: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
       ornamen_sisi_kiri: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
@@ -3756,6 +3802,10 @@
       setGalleryImg('dyn-gallery-img-4', cfg.foto_galeri_4);
       setGalleryImg('dyn-gallery-img-5', cfg.foto_galeri_5);
       setGalleryImg('dyn-gallery-img-6', cfg.foto_galeri_6);
+      setGalleryImg('dyn-gallery-img-7', cfg.foto_galeri_7);
+      setGalleryImg('dyn-gallery-img-8', cfg.foto_galeri_8);
+      setGalleryImg('dyn-gallery-img-9', cfg.foto_galeri_9);
+      setGalleryImg('dyn-gallery-img-10', cfg.foto_galeri_10);
 
       // 1. Cover Gunungan Image & Fallback
       const gununganUrl = convertDriveUrl(cfg.ornamen_gunungan_cover, false);
@@ -4377,9 +4427,14 @@
       document.body.classList.remove('no-scroll');
     }
 
-    /* ---- ATTENDANCE TOGGLE ---- */
+    /* ---- ATTENDANCE & REMINDER TOGGLE ---- */
     function onAttChange(showGuests) {
       document.getElementById('guests-group').classList.toggle('show', showGuests);
+    }
+
+    function toggleReminderOptions(show) {
+      const wrap = document.getElementById('reminder-options-wrap');
+      if (wrap) wrap.style.display = show ? 'block' : 'none';
     }
 
     /* ---- RSVP SUBMIT ---- */
@@ -4396,6 +4451,26 @@
       for (const r of radios) { if (r.checked) { kehadiran = r.value; break; } }
       const jumlah = kehadiran === 'Absen' ? 0 : Number(document.getElementById('inp-guests').value);
       const ucapan = document.getElementById('inp-wish').value;
+
+      const emailEl = document.getElementById('inp-email');
+      const email = emailEl ? emailEl.value.trim() : '';
+      const wantReminderEl = document.getElementById('inp-want-reminder');
+      const wantReminder = wantReminderEl ? wantReminderEl.checked : false;
+
+      let reminderTimings = [];
+      if (wantReminder) {
+        const timingBoxes = document.getElementsByName('reminder_timing');
+        for (const box of timingBoxes) {
+          if (box.checked) reminderTimings.push(box.value);
+        }
+      }
+      const reminderHMinus = reminderTimings.join(', ');
+
+      if (wantReminder && !email) {
+        resetBtn();
+        showToast('Email Diperlukan', 'Silakan isi alamat email Anda jika ingin diaktifkan pengingat.', 'alert-circle');
+        return;
+      }
 
       if (IS_GAS) {
         google.script.run
@@ -4414,7 +4489,7 @@
             resetBtn();
             showToast('Koneksi Gagal', err.toString(), 'alert-circle');
           })
-          .saveRSVP(nama, kehadiran, jumlah, ucapan);
+          .saveRSVP(nama, kehadiran, jumlah, ucapan, email, wantReminder, reminderHMinus);
       } else if (SCRIPT_URL) {
         // Send via fetch API to GAS Web App (simple request to avoid CORS OPTIONS preflight check)
         fetch(SCRIPT_URL, {
@@ -4427,7 +4502,10 @@
             namaTamu: nama,
             statusKehadiran: kehadiran,
             jumlahTamu: jumlah,
-            ucapan: ucapan
+            ucapan: ucapan,
+            emailTamu: email,
+            isReminder: wantReminder,
+            reminderHMinus: reminderHMinus
           })
         })
           .then(response => {
@@ -4479,6 +4557,11 @@
 
     function resetForm() {
       document.getElementById('inp-wish').value = '';
+      const emailEl = document.getElementById('inp-email');
+      if (emailEl) emailEl.value = '';
+      const wantRemEl = document.getElementById('inp-want-reminder');
+      if (wantRemEl) wantRemEl.checked = false;
+      toggleReminderOptions(false);
       document.getElementsByName('att').forEach(r => r.checked = false);
       document.getElementById('guests-group').classList.remove('show');
     }
