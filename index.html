@@ -3390,31 +3390,39 @@
             </div>
 
             <div class="form-group" style="margin-bottom:16px">
-              <label class="form-label">Email Anda (Untuk Pengingat Acara)</label>
+              <label class="form-label">Email Anda (Untuk Pengingat Acara — Opsional)</label>
               <input class="form-control" type="email" id="inp-email" placeholder="contoh: nama@email.com">
             </div>
 
             <div class="form-group" style="margin-bottom:0">
-              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 13px; color: var(--gold-pale); font-weight: 500;">
-                <input type="checkbox" id="inp-want-reminder" onchange="toggleReminderOptions(this.checked)" style="accent-color: var(--gold); width: 18px; height: 18px; cursor: pointer;">
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 13px; color: var(--text-primary); font-weight: 600;">
+                <input type="checkbox" id="inp-want-reminder" onchange="toggleReminderOptions(this.checked)" style="accent-color: var(--maroon-dark); width: 18px; height: 18px; cursor: pointer;">
                 <span>Ingatkan saya via Email sebelum hari H</span>
               </label>
 
-              <div id="reminder-options-wrap" style="display: none; margin-top: 12px; padding: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px;">
-                <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 8px;">Pilih jadwal pengingat (bisa pilih lebih dari satu):</p>
-                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gold-pale); cursor: pointer;">
-                    <input type="checkbox" name="reminder_timing" value="H-7" checked style="accent-color: var(--gold); width: 15px; height: 15px;">
+              <div id="reminder-options-wrap" style="display: none; margin-top: 12px; padding: 14px; background: rgba(111, 22, 34, 0.04); border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 8px;">
+                <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 10px; font-weight: 600;">Pilih jadwal pengingat (bisa pilih lebih dari satu):</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-primary); font-weight: 500; cursor: pointer;">
+                    <input type="checkbox" name="reminder_timing" value="H-7" checked style="accent-color: var(--maroon-dark); width: 16px; height: 16px;">
                     <span>H-7 (1 Minggu)</span>
                   </label>
-                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gold-pale); cursor: pointer;">
-                    <input type="checkbox" name="reminder_timing" value="H-3" checked style="accent-color: var(--gold); width: 15px; height: 15px;">
+                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-primary); font-weight: 500; cursor: pointer;">
+                    <input type="checkbox" name="reminder_timing" value="H-3" checked style="accent-color: var(--maroon-dark); width: 16px; height: 16px;">
                     <span>H-3 (3 Hari)</span>
                   </label>
-                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gold-pale); cursor: pointer;">
-                    <input type="checkbox" name="reminder_timing" value="H-1" checked style="accent-color: var(--gold); width: 15px; height: 15px;">
+                  <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-primary); font-weight: 500; cursor: pointer;">
+                    <input type="checkbox" name="reminder_timing" value="H-1" checked style="accent-color: var(--maroon-dark); width: 16px; height: 16px;">
                     <span>H-1 (1 Hari)</span>
                   </label>
+                </div>
+
+                <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(212, 175, 55, 0.3); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <label style="font-size: 12px; color: var(--text-primary); font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                    <input type="checkbox" id="inp-custom-date-check" onchange="toggleCustomDatePicker(this.checked)" style="accent-color: var(--maroon-dark); width: 16px; height: 16px;">
+                    <span>Pilih Tanggal Khusus:</span>
+                  </label>
+                  <input type="date" id="inp-custom-date" style="display: none; padding: 4px 10px; font-size: 12px; border: 1px solid var(--gold); border-radius: 6px; background: rgba(255, 255, 255, 0.8); color: var(--maroon-dark); outline: none;">
                 </div>
               </div>
             </div>
@@ -3539,10 +3547,10 @@
       foto_galeri_4: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600",
       foto_galeri_5: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&q=80&w=600",
       foto_galeri_6: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600",
-      foto_galeri_7: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600",
-      foto_galeri_8: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=600",
-      foto_galeri_9: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600",
-      foto_galeri_10: "https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&q=80&w=600",
+      foto_galeri_7: "",
+      foto_galeri_8: "",
+      foto_galeri_9: "",
+      foto_galeri_10: "",
       ornamen_gunungan_cover: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
       ornamen_header_seksi: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
       ornamen_sisi_kiri: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
@@ -3962,17 +3970,20 @@
     function initInteractiveGallery() {
       const mainDisplay = document.getElementById("invart-main-screen");
       const mainLink = document.getElementById("invart-main-link");
-      const thumbnails = document.querySelectorAll(".invart-thumb-item");
       const track = document.getElementById("invart-thumb-track");
 
-      if (mainDisplay && thumbnails.length > 0) {
+      // Filter only visible thumbnails (photos that actually have URLs)
+      const visibleThumbnails = Array.from(document.querySelectorAll(".invart-thumb-item")).filter(t => getComputedStyle(t).display !== 'none');
+
+      if (mainDisplay && visibleThumbnails.length > 0) {
         let currentIndex = 0;
         const intervalTime = 5000;
 
         function updateGallery(index) {
-          const targetThumb = thumbnails[index];
+          if (index < 0 || index >= visibleThumbnails.length) return;
+          const targetThumb = visibleThumbnails[index];
           const imgInside = targetThumb.querySelector("img");
-          if (!imgInside) return;
+          if (!imgInside || !imgInside.src) return;
           const newImageSrc = imgInside.src;
 
           mainDisplay.style.opacity = 0;
@@ -3982,7 +3993,7 @@
             mainDisplay.style.opacity = 1;
           }, 200);
 
-          thumbnails.forEach(t => t.classList.remove('is-active'));
+          document.querySelectorAll('.invart-thumb-item').forEach(t => t.classList.remove('is-active'));
           targetThumb.classList.add('is-active');
 
           if (track) {
@@ -3996,20 +4007,15 @@
         }
 
         function nextSlide() {
-          let nextIndex = (currentIndex + 1) % thumbnails.length;
-          const nextThumbImg = thumbnails[nextIndex].querySelector("img");
-          if (nextThumbImg && nextThumbImg.src && nextThumbImg.src !== window.location.href && nextThumbImg.src !== "") {
-            updateGallery(nextIndex);
-          } else {
-            updateGallery(0);
-          }
+          let nextIndex = (currentIndex + 1) % visibleThumbnails.length;
+          updateGallery(nextIndex);
         }
 
         let isGalleryVisible = false;
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             isGalleryVisible = entry.isIntersecting;
-            if (isGalleryVisible) {
+            if (isGalleryVisible && visibleThumbnails.length > 1) {
               clearInterval(galleryAutoSlideInterval);
               galleryAutoSlideInterval = setInterval(nextSlide, intervalTime);
             } else {
@@ -4019,10 +4025,10 @@
         }, { threshold: 0.1 });
         observer.observe(mainDisplay);
 
-        thumbnails.forEach((thumb, index) => {
+        visibleThumbnails.forEach((thumb, index) => {
           thumb.addEventListener("click", function () {
             updateGallery(index);
-            if (isGalleryVisible) {
+            if (isGalleryVisible && visibleThumbnails.length > 1) {
               clearInterval(galleryAutoSlideInterval);
               galleryAutoSlideInterval = setInterval(nextSlide, intervalTime);
             }
@@ -4437,6 +4443,19 @@
       if (wrap) wrap.style.display = show ? 'block' : 'none';
     }
 
+    function toggleCustomDatePicker(show) {
+      const input = document.getElementById('inp-custom-date');
+      if (input) {
+        input.style.display = show ? 'inline-block' : 'none';
+        if (show && !input.value) {
+          // Default to today or tomorrow
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          input.value = tomorrow.toISOString().split('T')[0];
+        }
+      }
+    }
+
     /* ---- RSVP SUBMIT ---- */
     function submitRSVP(e) {
       e.preventDefault();
@@ -4462,6 +4481,11 @@
         const timingBoxes = document.getElementsByName('reminder_timing');
         for (const box of timingBoxes) {
           if (box.checked) reminderTimings.push(box.value);
+        }
+        const customDateCheck = document.getElementById('inp-custom-date-check');
+        const customDateInput = document.getElementById('inp-custom-date');
+        if (customDateCheck && customDateCheck.checked && customDateInput && customDateInput.value) {
+          reminderTimings.push(customDateInput.value.trim());
         }
       }
       const reminderHMinus = reminderTimings.join(', ');
@@ -4561,6 +4585,9 @@
       if (emailEl) emailEl.value = '';
       const wantRemEl = document.getElementById('inp-want-reminder');
       if (wantRemEl) wantRemEl.checked = false;
+      const customDateCheck = document.getElementById('inp-custom-date-check');
+      if (customDateCheck) customDateCheck.checked = false;
+      toggleCustomDatePicker(false);
       toggleReminderOptions(false);
       document.getElementsByName('att').forEach(r => r.checked = false);
       document.getElementById('guests-group').classList.remove('show');
