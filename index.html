@@ -2141,9 +2141,21 @@
 
     .bank-header {
       background: var(--cream-warm);
-      padding: 12px 14px;
+      padding: 10px 16px;
       border-bottom: 1px solid rgba(212, 175, 55, 0.2);
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+    }
+
+    .bank-logo-img {
+      max-height: 36px;
+      max-width: 150px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
     }
 
     .bank-name {
@@ -3485,11 +3497,12 @@
               <!-- Rekening 1 -->
               <div class="bank-card">
                 <div class="bank-header">
-                  <span class="bank-name">Bank Mandiri</span>
+                  <img class="bank-logo-img" id="dyn-bank-logo-1" src="https://lh3.googleusercontent.com/d/1pWM0yJerYQngD7zs9HhP1KCDRzfpfkm1" alt="Bank BCA" referrerpolicy="no-referrer">
+                  <span class="bank-name" id="dyn-bank-nama-header-1" style="display: none;">Bank BCA</span>
                 </div>
                 <div class="bank-body">
-                  <p class="account-number" id="dyn-bank-norek-1">1370012345678</p>
-                  <p class="account-holder" id="dyn-bank-nama-1">a.n. Farhandy</p>
+                  <p class="account-number" id="dyn-bank-norek-1">2290597075</p>
+                  <p class="account-holder" id="dyn-bank-nama-1">FARHANDY ILHAM SEPTIAWAN</p>
                   <button class="btn-copy" onclick="copyToClipboard('dyn-bank-norek-1', this)">
                     <i data-lucide="copy"></i> Salin Rekening
                   </button>
@@ -3499,11 +3512,12 @@
               <!-- Rekening 2 -->
               <div class="bank-card">
                 <div class="bank-header">
-                  <span class="bank-name">Bank BCA</span>
+                  <img class="bank-logo-img" id="dyn-bank-logo-2" src="https://lh3.googleusercontent.com/d/1-7zwNVg0ONz1YRrrbQ4fofVxTBAp_iej" alt="Bank Permata" referrerpolicy="no-referrer">
+                  <span class="bank-name" id="dyn-bank-nama-header-2" style="display: none;">Bank Permata</span>
                 </div>
                 <div class="bank-body">
-                  <p class="account-number" id="dyn-bank-norek-2">8012345678</p>
-                  <p class="account-holder" id="dyn-bank-nama-2">a.n. Mutiara</p>
+                  <p class="account-number" id="dyn-bank-norek-2">9941015961</p>
+                  <p class="account-holder" id="dyn-bank-nama-2">MUTIARA ROSSA</p>
                   <button class="btn-copy" onclick="copyToClipboard('dyn-bank-norek-2', this)">
                     <i data-lucide="copy"></i> Salin Rekening
                   </button>
@@ -3783,7 +3797,15 @@
       ornamen_sisi_kiri: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
       ornamen_sisi_kanan: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
       pattern_background: "",
-      og_image: "https://lh3.googleusercontent.com/d/1qMzh4SpTkJ4oVal8OOSFrdSbPeQhX6Y_"
+      og_image: "https://lh3.googleusercontent.com/d/1qMzh4SpTkJ4oVal8OOSFrdSbPeQhX6Y_",
+      bank_nama_1: "Bank BCA",
+      bank_logo_1: "https://lh3.googleusercontent.com/d/1pWM0yJerYQngD7zs9HhP1KCDRzfpfkm1",
+      bank_norek_1: "2290597075",
+      bank_an_1: "FARHANDY ILHAM SEPTIAWAN",
+      bank_nama_2: "Bank Permata",
+      bank_logo_2: "https://lh3.googleusercontent.com/d/1-7zwNVg0ONz1YRrrbQ4fofVxTBAp_iej",
+      bank_norek_2: "9941015961",
+      bank_an_2: "MUTIARA ROSSA"
     };
 
     /* ---- PROCESS CONFIGURATION ---- */
@@ -4140,15 +4162,35 @@
       setElText('dyn-story-quote', cfg.story_quote || 'Mungkin kami pernah berpisah berkali-kali, tetapi pada akhirnya kami selalu menemukan jalan untuk kembali. Kini, kami percaya bahwa setiap pertemuan dan perpisahan adalah bagian dari rencana indah Tuhan yang membawa kami sampai di hari bahagia ini.');
 
       // Set Gift Registry Data
-      setElText('dyn-bank-norek-1', cfg.bank_norek_1 || '1370012345678');
-      setElText('dyn-bank-nama-1', cfg.bank_an_1 || 'a.n. Farhandy');
-      const b1 = document.querySelector('#gift-tab-transfer .bank-card:nth-child(1) .bank-name');
-      if (b1) b1.textContent = cfg.bank_nama_1 || 'Bank Mandiri';
+      setElText('dyn-bank-norek-1', cfg.bank_norek_1 || '2290597075');
+      setElText('dyn-bank-nama-1', cfg.bank_an_1 || 'FARHANDY ILHAM SEPTIAWAN');
+      const logo1Url = convertDriveUrl(cfg.bank_logo_1);
+      const img1 = document.getElementById('dyn-bank-logo-1');
+      const hdr1 = document.getElementById('dyn-bank-nama-header-1');
+      if (logo1Url && img1) {
+        img1.src = logo1Url;
+        img1.style.display = 'block';
+        if (hdr1) hdr1.style.display = 'none';
+      } else if (hdr1) {
+        if (img1) img1.style.display = 'none';
+        hdr1.textContent = cfg.bank_nama_1 || 'Bank BCA';
+        hdr1.style.display = 'inline-block';
+      }
 
-      setElText('dyn-bank-norek-2', cfg.bank_norek_2 || '8012345678');
-      setElText('dyn-bank-nama-2', cfg.bank_an_2 || 'a.n. Mutiara');
-      const b2 = document.querySelector('#gift-tab-transfer .bank-card:nth-child(2) .bank-name');
-      if (b2) b2.textContent = cfg.bank_nama_2 || 'Bank BCA';
+      setElText('dyn-bank-norek-2', cfg.bank_norek_2 || '9941015961');
+      setElText('dyn-bank-nama-2', cfg.bank_an_2 || 'MUTIARA ROSSA');
+      const logo2Url = convertDriveUrl(cfg.bank_logo_2);
+      const img2 = document.getElementById('dyn-bank-logo-2');
+      const hdr2 = document.getElementById('dyn-bank-nama-header-2');
+      if (logo2Url && img2) {
+        img2.src = logo2Url;
+        img2.style.display = 'block';
+        if (hdr2) hdr2.style.display = 'none';
+      } else if (hdr2) {
+        if (img2) img2.style.display = 'none';
+        hdr2.textContent = cfg.bank_nama_2 || 'Bank Permata';
+        hdr2.style.display = 'inline-block';
+      }
 
       setElText('dyn-alamat-kado', cfg.alamat_kado || 'Jl. Rotowijayan No. 1, Kadipaten, Kraton, Yogyakarta');
 
