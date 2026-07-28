@@ -5,6 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Undangan Pernikahan - Farhandy & Mutiara</title>
+  <!-- Open Graph & Social Media Preview (WhatsApp Thumbnail) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Undangan Pernikahan - Farhandy & Mutiara">
+  <meta property="og:description" content="Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i Untuk Hadir Di Acara Pernikahan Kami.">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1qMzh4SpTkJ4oVal8OOSFrdSbPeQhX6Y_">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Undangan Pernikahan - Farhandy & Mutiara">
+  <meta property="twitter:description" content="Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i Untuk Hadir Di Acara Pernikahan Kami.">
+  <meta property="twitter:image" content="https://lh3.googleusercontent.com/d/1qMzh4SpTkJ4oVal8OOSFrdSbPeQhX6Y_">
   <link rel="icon" href="https://lh3.googleusercontent.com/d/1VeqfE-8LTHJN3qN2Rfg30SvgId70xvhS" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1636,18 +1647,26 @@
        ============================================ */
     .countdown-wrap {
       text-align: center;
-      margin-top: 60px;
-      padding-top: 60px;
-      border-top: 1px solid rgba(93, 64, 55, 0.1);
+      margin: 50px auto 0;
+      max-width: 680px;
+      position: relative;
+      padding: 36px 20px;
+      background: rgba(255, 252, 247, 0.65);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(62, 39, 35, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .countdown-label {
       font-family: var(--ff-display);
       font-size: 20px;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--text-secondary);
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       font-style: italic;
+      letter-spacing: 0.02em;
     }
 
     .countdown-grid {
@@ -1669,36 +1688,68 @@
       gap: 8px;
     }
 
+    /* Retro Mechanical Split-Flip Clock Tile */
     .cd-box {
-      width: clamp(60px, 16vw, 80px);
-      height: clamp(68px, 18vw, 88px);
-      background: var(--maroon-dark);
-      /* Beautiful Javanese Maroon */
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      border-radius: 8px;
-      /* Elegant rounded corners */
+      width: clamp(62px, 17vw, 84px);
+      height: clamp(70px, 19vw, 90px);
+      background: linear-gradient(to bottom, #6f1622 0%, #58111a 49.5%, #3a0a10 50.5%, #220408 100%);
+      border: 1.5px solid rgba(212, 175, 55, 0.5);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(58, 10, 16, 0.35), inset 0 0 12px rgba(0, 0, 0, 0.4);
+      padding: 4px;
+    }
+
+    /* Inner Double Golden Outline */
+    .cd-box::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 9px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Retro Mechanical Split-Flip Crease Line */
+    .cd-box::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 1px 0 rgba(212, 175, 55, 0.45);
+      z-index: 3;
     }
 
     .cd-num {
       font-family: var(--ff-body);
-      font-size: clamp(28px, 8vw, 38px);
-      font-weight: 600;
+      font-size: clamp(28px, 8.5vw, 40px);
+      font-weight: 700;
       color: var(--gold-light);
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+      z-index: 4;
+      position: relative;
     }
 
     .cd-label {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-family: var(--ff-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--gold-dark);
+      margin-top: 4px;
     }
 
     /* ============================================
@@ -2967,7 +3018,10 @@
         </p>
         <p class="wisdom-quote"
           style="font-size: 12.5px; line-height: 1.7; margin-bottom: 10px; color: var(--gold-pale);">
-          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
+          sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+          sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang
+          berpikir."
         </p>
         <p class="wisdom-translation"
           style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-style: normal; margin-top: 8px;">
@@ -3728,7 +3782,8 @@
       ornamen_header_seksi: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
       ornamen_sisi_kiri: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
       ornamen_sisi_kanan: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200",
-      pattern_background: ""
+      pattern_background: "",
+      og_image: "https://lh3.googleusercontent.com/d/1qMzh4SpTkJ4oVal8OOSFrdSbPeQhX6Y_"
     };
 
     /* ---- PROCESS CONFIGURATION ---- */
@@ -3755,6 +3810,13 @@
           window.appConfig[k] = DEFAULT_CONFIG[k];
         }
       }
+    }
+
+    if (window.appConfig && window.appConfig.og_image) {
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg) ogImg.setAttribute('content', window.appConfig.og_image);
+      const twImg = document.querySelector('meta[property="twitter:image"]');
+      if (twImg) twImg.setAttribute('content', window.appConfig.og_image);
     }
 
     /* ---- GOOGLE DRIVE & DROPBOX LINK CONVERTER ---- */
